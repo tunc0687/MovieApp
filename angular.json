@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "MovieApp"
+    }
+  },
+  "defaultProject": "MovieApp",
+  "cli": {
+    "analytics": false
+  }
 }
