@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
 import { DetailComponent } from './detail/detail.component';
+import { LoggingComponent } from './logging/logging.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
     MovieComponent,
-    DetailComponent
+    DetailComponent,
+    LoggingComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
