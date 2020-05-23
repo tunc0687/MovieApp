@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Movie } from '../movie';
 
 @Component({
-  selector: 'app-detail',
+  selector: 'detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
+ 
+  @Input() movie: Movie;
 
   constructor() { }
 

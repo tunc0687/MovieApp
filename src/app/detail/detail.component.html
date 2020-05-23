@@ -1,1 +1,13 @@
-<p>detail works!</p>
+<div class="card" *ngIf="movie">
+    <div class="card-body">
+        <span class="badge badge-success">
+            id: {{ movie.id }} - name: {{ movie.name }} 
+        </span>
+        <div class="input-group">
+            <input #nameInput [(ngModel)]="movie.name" type="text" class="form-control">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
