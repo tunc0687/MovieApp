@@ -1,4 +1,27 @@
-<h2>Movies Component</h2>
-<movie></movie>
-<movie></movie>
-<movie></movie>
+<div class="card" *ngIf="selectedMovie">
+    <div class="card-body">
+        <span class="badge badge-success">
+            id: {{ selectedMovie.id }} - name: {{ selectedMovie.name }} 
+        </span>
+        <div class="input-group">
+            <input #nameInput [(ngModel)]="selectedMovie.name" type="text" class="form-control">
+            <div class="input-group-append">
+                <button (click)="updateMovie()" class="btn btn-outline-secondary" type="button">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-warning">
+        <h2 class="text-center text-white">{{ title }}</h2>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let movie of movies"
+        (click)="onSelect(movie)"
+        [class.active] = "movie === selectedMovie">
+            <span class="badge badge-primary badge-md"> {{movie.id}} </span> {{movie.name}}
+            <span class="close">x</span>
+        </li>
+    </ul>
+</div>
