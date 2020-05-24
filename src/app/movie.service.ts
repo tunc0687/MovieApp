@@ -8,6 +8,7 @@ import { LoggingService } from './logging.service';
     providedIn: 'root'
 })
 export class MovieService {
+    movie: Movie;
 
     constructor(private loggingService: LoggingService) { }
 
@@ -16,4 +17,9 @@ export class MovieService {
         return of(MovieList);
     }
 
+    getMovie(id): Observable<Movie> {
+        this.movie = MovieList.find(movie => movie.id == id);
+        this.loggingService.add("MovieService: " + this.movie.name + " movie details.");
+        return of(this.movie);
+    }
 }
