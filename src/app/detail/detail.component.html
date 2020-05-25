@@ -1,13 +1,26 @@
 <div class="card" *ngIf="movie">
     <div class="card-body">
         <span class="badge badge-success">
-            id: {{ movie.id }} - name: {{ movie.name }} 
+            id: {{ movie.id }} 
         </span>
-        <div class="input-group">
-            <input #nameInput [(ngModel)]="movie.name" type="text" class="form-control">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">Update</button>
-            </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="movie.name">
+        </div>
+
+        <div class="form-group">
+            <label for="imageUrl">ImageUrl</label>
+            <input type="text" class="form-control" [(ngModel)]="movie.imageUrl">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" [(ngModel)]="movie.description">
+        </div>
+
+        <div class="form-group">
+            <button (click)="save()" class="btn btn-outline-secondary" type="button">Update</button>
+            <button (click)="delete()" class="btn btn-outline-danger float-right" type="button">Delete</button>
         </div>
     </div>
 </div>

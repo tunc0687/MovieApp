@@ -30,4 +30,17 @@ export class MoviesComponent implements OnInit {
             });
     }
 
+    add(name: string, imageUrl: string, description: string): void {
+        let id = this.movies.length + 1;
+
+        let mov = new Movie(id, name, description, imageUrl);
+
+        this.movieService.addMovie(mov)
+            .subscribe(movie => { });
+    }
+
+    delete(movie: Movie): void {
+        this.movieService.deleteMovie(movie).subscribe(() => {});
+    }
+
 }
